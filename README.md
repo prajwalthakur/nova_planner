@@ -1,17 +1,20 @@
-# MPPI-Based Reach-Avoid Simulation in Python and ROS2
+# Nova Planner
 
-This repository provides a simulation framework for Model Predictive Path Integral (MPPI) control in a reach-avoid setting using both Matplotlib-based Python simulation and ROS2 with Gazebo integration. The simulation showcases real-time obstacle avoidance and goal-directed planning, leveraging JAX for highly efficient batch computation via vmap and jit
+Nova Planner is a ROS 2–based motion planning repository providing clean, example-driven implementations of sampling-based planning methods. It includes MPPI variants implemented in Python and JAX for fast prototyping and GPU-accelerated rollouts, alongside ongoing C++ implementations for real-time robotic systems. The repository also covers spline-based trajectory planning and multi-agent scenarios, with support for static, dynamic, and stochastic obstacles, and integrates with ROS 2 and Gazebo for simulation and visualization.
+
+https://github.com/user-attachments/assets/10aa119e-c363-4215-aba8-9f231d30886d
+
+(Will update the code base soon, for changes related to run mppi with dynamic obstacles)
+
 
 ## Highlights: 
-- Python-based simulation with Matplotlib for easy visualization and debugging
-
-- ROS2 and Gazebo support for realistic robotic simulations with TurtleBot3
-
-- GPU-accelerated planning (via JAX ), runs up to 20 Hz
-
-- Modular design with configurable parameters via YAML
-
-- Dockerized setup for consistent environments
+- MPPI variants implemented in Python & JAX (C++ versions coming soon).
+- Spline-based planners for single-agent and multi-agent systems.
+- Planning with static, dynamic, and stochastic obstacles.
+- ROS 2 & Gazebo integration for simulation and visualization.
+- GPU-accelerated planning via JAX, running up to 20 Hz.
+- Configurable parameters using YAML.
+- Dockerized for reproducible environments.
 
 ## System Requirements:
 
