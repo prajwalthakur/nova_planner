@@ -2,9 +2,18 @@
 
 Nova Planner is a ROS 2–based motion planning repository providing clean, example-driven implementations of sampling-based planning methods. It includes MPPI variants implemented in Python and JAX for fast prototyping and GPU-accelerated rollouts, alongside ongoing C++ implementations for real-time robotic systems. The repository also covers spline-based trajectory planning and multi-agent scenarios, with support for static, dynamic, and stochastic obstacles, and integrates with ROS 2 and Gazebo for simulation and visualization.
 
-https://github.com/user-attachments/assets/10aa119e-c363-4215-aba8-9f231d30886d
 
-(Will update the code base soon, for changes related to run mppi with dynamic obstacles)
+# Vanilla-MPPI dynamic obstacle Avoidance example:
+
+https://github.com/user-attachments/assets/56886b1d-27a7-4f9b-8971-60ec09084155
+
+https://github.com/user-attachments/assets/10aa119e-c363-4215-aba8-9f231d30886d
+## To run above example:
+- `ros2 launch obstacle_sim obstacle_sim.launch.py` This will launch gazebo,rviz spawn n_obs obstacles and turtlebot
+- `ros2 run mppi_planner vanilla_mppi_planner_node` This will run the ros2 node for vanilla mppi
+- `ros2 run obstacle_sim obstacle_sim_node` This will run the obstacle_node, to prevent inter-obstacle collisions, the nominal velocities are modified
+using the Reciprocal Velocity Obstacles (RVO) model
+
 
 
 ## Highlights: 
@@ -22,11 +31,6 @@ https://github.com/user-attachments/assets/10aa119e-c363-4215-aba8-9f231d30886d
 
 - CUDA-enabled GPU recommended; CPU-only mode supported (See notes at the end of the readme)
 
-## Demo Videos:
-
-`non_ros/example_video/`: Matplotlib-based simulation
-
-`mppi_planner/example_video/`: ROS2 + Gazebo simulation
 
 # Setup:
 Assumes Cuda compatible hardware (check notes, if needs to run in cpu only)
