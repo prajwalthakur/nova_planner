@@ -1,7 +1,10 @@
 # PlannerSandbox
 
-Nova Planner is a ROS 2–based motion planning repository providing clean, example-driven implementations of sampling-based planning methods. It includes MPPI variants implemented in Python and JAX for fast prototyping and GPU-accelerated rollouts, alongside ongoing C++ implementations for real-time robotic systems. The repository also covers spline-based trajectory planning and multi-agent scenarios, with support for static, dynamic, and stochastic obstacles, and integrates with ROS 2 and Gazebo for simulation and visualization.
+PlannerSandbox is a ROS 2–based motion planning repository providing clean, example-driven implementations of sampling-based planning methods. It includes MPPI variants implemented in Python and JAX for fast prototyping and GPU-accelerated rollouts, alongside ongoing C++ implementations for real-time robotic systems. The repository also covers spline-based trajectory planning and multi-agent scenarios, with support for static, dynamic, and stochastic obstacles, and integrates with ROS 2 and Gazebo for simulation and visualization.
 
+
+# Added implementation for Dynamic Risk-Aware MPPI for Mobile Robots in Crowds via Efficient Monte Carlo Approximations [paperLink: Dynamic Risk-Aware MPPI](https://arxiv.org/abs/2506.21205)
+- `ros2 run mppi_planner dyn_risk_mppi_planner_node` This will run the ros2 node for dynamic risk aware mppi
 
 # Vanilla-MPPI dynamic obstacle Avoidance example:
 

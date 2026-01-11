@@ -11,7 +11,7 @@ from jax import config  # Analytical gradients work much better with double prec
 config.update("jax_debug_nans", True)
 config.update("jax_enable_x64", True)
 
-from .mppi_class import MPPI
+from .dyn_risk_mppi_class import MPPI
 from mppi_planner.config_loader import  configLoader 
 
 import rclpy
@@ -25,18 +25,18 @@ from typing import Dict
 
 
 # Load core parameters from YAML
-config_path  = "src/mppi_planner/config/vanilla_sim_config.yaml"
+config_path  = "src/mppi_planner/config/dyn_sim_config.yaml"
 with open(config_path, 'r') as f:
     cfg = yaml.safe_load(f)
 
 seed                     = int(cfg['seed'])
-dt                       = float(cfg['dt'])
+dt                       = float(cfg['mppi']['dt'])
 dim_ctrl                 = int(cfg['dim_control'])
 euclid_goal_tol          = float(cfg['euclid_goal_tol'])
 orient_goal_tol          =  float(cfg['orient_goal_tol'])
 time_horizon           = int(cfg['time_horizon'])
 horizon_length = int(time_horizon//dt)
-mppi_num_rollouts        = int(cfg['mppi_num_rollouts'])
+mppi_num_rollouts        = int(cfg['mppi']['num_rollouts'])
 pose_lim                 = jnp.array(cfg['pose_lim'])
 num_obs                  = int(cfg['num_obs'])
 
